@@ -25,8 +25,8 @@ def detect_emotion():
         print("Lua chon khong hop le")
         get_input_type()
     from keras.models import model_from_json
-    model = model_from_json(open("model_structure.json", "r").read())
-    model.load_weights('model_weights.h5') #load weights
+    model = model_from_json(open("model/model_structure.json", "r").read())
+    model.load_weights('model/model_weights.h5') #load weights
     emotions = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral')
     while True:
         ret, img = cap.read()

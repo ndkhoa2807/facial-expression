@@ -2,3 +2,5 @@ Data/
 ignore/
 data/
 video/
+gui.py
+.ipynb_checkpoints/
