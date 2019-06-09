@@ -14,13 +14,13 @@ import numpy as np
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 deprecation._PRINT_DEPRECATION_WARNINGS = False
 
-with open("model_structure.json", "r") as f:
+with open("model/model_structure.json", "r") as f:
     structure = f.read()
     model = model_from_json(structure)
 
-model.load_weights('model_weights.h5')
+model.load_weights('model/model_weights.h5')
 
-emotions = ('gian du', 'ghe tom', 'so hai', 'vui ve', 'buon', 'bat ngo', 'binh thuong')
+emotions = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral')
 
 
 def get_faces(img_path):

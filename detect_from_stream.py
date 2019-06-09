@@ -25,13 +25,13 @@ def detect_emotion():
         print("Lua chon khong hop le")
         get_input_type()
     from keras.models import model_from_json
-    model = model_from_json(open("model/model_structure.json", "r").read())
-    model.load_weights('model/model_weights.h5') #load weights
+    model = model_from_json(open("model/facial_expression_model_structure.json", "r").read())
+    model.load_weights('model/facial_expression_model_weights.h5') #load weights
     emotions = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral')
     while True:
         ret, img = cap.read()
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+        faces = face_cascade.detectMultiScale(gray, 1.5, 6)
 
         for (x, y, w, h) in faces:
             cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)  # draw rectangle around faces
